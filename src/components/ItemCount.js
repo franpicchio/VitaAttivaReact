@@ -14,15 +14,11 @@ const ItemCount = ({stock,initial}) => {
     }
     
     return(
-        <article className="w-25">
-            <h3>Producto</h3>
-            <img alt="Acá va una imagen" />
-            <div className="d-flex justify-content-around">
-                <button onClick = {HandleResta}>-</button>
-                <p>{contador}</p>
-                <button onClick = {HandleSuma}>+</button>
-            </div>
-        </article>
+        <div className="d-flex justify-content-around">
+            <button className='btn btn-danger rounded' onClick = {HandleResta}>-</button>
+            <p>{contador}</p>
+            <button className='btn btn-danger rounded' onClick = {HandleSuma}>+</button>
+        </div>
     )
 }
 
