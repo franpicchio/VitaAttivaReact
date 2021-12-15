@@ -14,10 +14,10 @@ const ItemCount = ({stock,initial}) => {
     }
     
     return(
-        <div className="d-flex justify-content-around">
+        <div className="d-flex justify-content-around m-3">
             <button className='btn btn-danger rounded' onClick = {HandleResta}>-</button>
             <p>{contador}</p>
-            <button className='btn btn-danger rounded' onClick = {HandleSuma}>+</button>
+            <button className='btn btn-danger nrounded' onClick = {HandleSuma}>+</button>
         </div>
     )
 }

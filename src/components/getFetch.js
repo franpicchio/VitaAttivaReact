@@ -49,9 +49,11 @@ const productos = [{
     }
 ]
 
+const find = productos.find(producto => producto.nombre === 'Almendras')
+
 const getFetch = new Promise((resolve) => {
     setTimeout(() => {
-        resolve(productos)
+        resolve(find)
     }, 2000)
 })
 
