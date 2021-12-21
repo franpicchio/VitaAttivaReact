@@ -1,7 +1,7 @@
 import React from 'react'
 import {useState} from 'react'
 
-const ItemCount = ({stock,initial}) => {
+const ItemCount = ({stock,initial,onAdd}) => {
     const [contador, SetContador] = useState (initial);
     
     const HandleSuma = () =>{
@@ -14,10 +14,13 @@ const ItemCount = ({stock,initial}) => {
     }
     
     return(
-        <div className="d-flex justify-content-around m-3">
-            <button className='btn btn-danger rounded' onClick = {HandleResta}>-</button>
-            <p>{contador}</p>
-            <button className='btn btn-danger nrounded' onClick = {HandleSuma}>+</button>
+        <div>
+            <div className="d-flex justify-content-around m-3">
+                <button className='btn btn-danger rounded' onClick = {HandleResta}>-</button>
+                <p>{contador}</p>
+                <button className='btn btn-danger nrounded' onClick = {HandleSuma}>+</button>
+            </div>
+            <button className="btn btn-primary m-2" onClick={() => onAdd(contador)}>Agregar al carrito</button>
         </div>
     )
 }
