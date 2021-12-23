@@ -2,15 +2,20 @@ import React from 'react'
 import ItemCount from './ItemCount'
 import {useState} from 'react'
 import {Link} from 'react-router-dom'
+import { useCartContext } from '../context/CartContext'
 
 const ItemDetail = ({productos}) => {
     const [irCarrito, setIrCarrito] = useState(true)
 
+    const {cartList, AgregarAlCarrito} = useCartContext()
+
     const onAdd = (cantidad) => {
         setIrCarrito(false)
         console.log(`Se han agregado ${cantidad} productos al carrito`)
+        AgregarAlCarrito({...productos, cantidad:cantidad})
     }
 
+    console.log(cartList)
     
     return (
         <article className="card w-25 m-3" key={productos.id}>
@@ -21,9 +26,14 @@ const ItemDetail = ({productos}) => {
                 {irCarrito ? (
                 <ItemCount stock={productos.stock} initial={1} onAdd={onAdd} />
                 ) : (
-                <Link to='/cart'>
-                    <button className="btn btn-primary m-2">Ir al carrito</button>
-                </Link>
+                    <div>
+                    <Link to='/cart'>
+                        <button className="btn btn-primary m-2">Ir al carrito</button>
+                    </Link>
+                    <Link to='/'>
+                    <button className="btn btn-danger m-2">Seguir Comprando</button>
+                    </Link>
+                </div>
                 )} 
             </div>
         </article>
