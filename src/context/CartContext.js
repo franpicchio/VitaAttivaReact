@@ -19,16 +19,24 @@ export const CartContextProvider = ({children}) => {
         }
     }
 
-    const BorrarItem = (item) => {
-        setCartList([cartList.filter(i => i.id !== item.id)])
+    const BorrarItem = (id) => {
+        setCartList(cartList.filter(prod => prod.id !== id))
     }
 
     const BorrarCarrito = () => {
         setCartList([])
     }
 
+    function totalCantidad() {
+        return cartList.reduce((acc, prod) => acc + prod.cantidad, 0)
+    }
+
+    function totalCompra() {
+        return cartList.reduce((acc, prod) => acc + prod.precio * prod.cantidad, 0)
+    }
+
     return (
-        <CartContext.Provider value={{cartList, AgregarAlCarrito, BorrarCarrito, BorrarItem}}>
+        <CartContext.Provider value={{cartList, AgregarAlCarrito, BorrarCarrito, BorrarItem, totalCantidad, totalCompra}}>
             {children}
         </CartContext.Provider>
     )
