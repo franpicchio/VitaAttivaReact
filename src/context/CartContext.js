@@ -20,8 +20,7 @@ export const CartContextProvider = ({children}) => {
     }
 
     const BorrarItem = (item) => {
-        const productoEliminado = cartList.filter(i => i.id !== item.id)
-        setCartList([productoEliminado])
+        setCartList([cartList.filter(i => i.id !== item.id)])
     }
 
     const BorrarCarrito = () => {

@@ -1,19 +1,22 @@
 import React from 'react'
-import { useCartContext } from '../context/CartContext'
+/*import { useState } from 'react'
+import { useCartContext } from '../context/CartContext'*/
+import cart from '../img/cart.svg'
 
-function CartWidget() {
-    const {cartList, BorrarCarrito,BorrarItem } = useCartContext()
+export const CartWidget = () => {
+    /*const[cantidadCarrito, setCantidadCarrito] = useState(true)
+
+    const {cartList} = useCartContext()*/
 
     return (
-        <table>
-            {cartList.map(productos =>  <tr className='d-flex'>
-                                            <th>{productos.nombre}</th> 
-                                            <td>{productos.cantidad}</td>
-                                            <td><button className='btn btn-danger m-3' onClick={BorrarItem}>Eliminar</button></td>
-                                        </tr>)}
-            <button onClick={BorrarCarrito} className='btn btn-warning'>Vaciar Carrito</button>
-        </table>
+        <div className='d-flex'>
+            <img src={cart} className="card-img-top mx-1" alt="Logo Vita Attiva" width="35" height="35" />
+        </div>
     )
 }
 
-export default CartWidget
+/*{cantidadCarrito ?
+            <span className="badge bg-secondary align-self-center visually-hidden">{}</span>
+            :
+            <span className="badge bg-secondary align-self-center">{cartList.length}</span>
+            }*/
