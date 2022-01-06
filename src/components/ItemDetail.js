@@ -19,10 +19,11 @@ const ItemDetail = ({productos}) => {
     
     return (
         <article className="card w-25 m-3" key={productos.id}>
-            <img src={productos.img} className="card-img-top" alt="..." />
+            <img src={productos.imagen} className="card-img-top" alt="..." />
             <div className="card-body">
                 <h4 className="card-title">{productos.nombre}</h4>
                 <p className="card-text">Precio: ${productos.precio}</p>
+                <p className="card-text">{productos.descripcion}</p>
                 {irCarrito ? (
                 <ItemCount stock={productos.stock} initial={1} onAdd={onAdd} />
                 ) : (
