@@ -5,7 +5,7 @@ const CartContext = createContext([])
 export const useCartContext = () => useContext(CartContext)
 
 export const CartContextProvider = ({children}) => {
-    const [cartList, setCartList] = useState([])
+    const [cartList, setCartList] = useState([])  
 
     const AgregarAlCarrito = (item) => {
         const existe = cartList.findIndex(i => i.id === item.id)
