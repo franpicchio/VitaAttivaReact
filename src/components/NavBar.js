@@ -24,7 +24,6 @@ const NavBar = () => {
                         <NavLink to="/category/suplementos" className="dropdown-item">Suplementos Deportivos</NavLink>
                         <NavLink to="/category/frutos" className="dropdown-item">Frutos Secos</NavLink>
                         </NavDropdown>
-                        <Nav.Link className="nav-link" href="contacto.html">Contacto</Nav.Link>
                     </Nav>
                     </Navbar.Collapse>
                 </Container>
