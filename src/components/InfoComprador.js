@@ -1,18 +1,13 @@
 import React from 'react'
 import { useState } from 'react'
-import { useCompraContext } from '../context/CompraContext'
-//import { useCartContext } from '../context/CartContext'
 
 export const InfoComprador = ({idOrden}) => {
     const [ordenComprador, setOrdenComprador] = useState({nombre:"", telefono:"", email:""})
-    //const {HandleSubmit} = useCompraContext()
     const [finCompra, setFinCompra] = useState(false)
 
-    const HandleSubmit = (e) =>{
-        e.preventDefault()
+    const HandleSubmit = () =>{
         setFinCompra(true)
     }
-
 
     const HandleOrden = (e) => {
         setOrdenComprador({
@@ -20,8 +15,6 @@ export const InfoComprador = ({idOrden}) => {
             [e.target.name]: e.target.value
         })
     }
-
-    console.log(ordenComprador)
 
     return (
         <section>

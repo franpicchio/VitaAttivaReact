@@ -1,12 +1,10 @@
 import React from 'react'
 import { useCartContext } from '../context/CartContext'
-import { useCompraContext } from '../context/CompraContext'
 import {collection, addDoc, getFirestore} from 'firebase/firestore'
 import { useState } from 'react'
 import { InfoComprador } from './InfoComprador'
 
 function Cart() {
-    const {finCompra} = useCompraContext()
     const [idOrden, setIdOrden] = useState('')
     const {cartList, BorrarCarrito,BorrarItem, totalCompra} = useCartContext()
     const [continuarCompra, setContinuarCompra] = useState(false)

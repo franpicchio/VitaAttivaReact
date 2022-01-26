@@ -11,7 +11,6 @@ const ItemDetail = ({productos}) => {
 
     const onAdd = (cantidad) => {
         setIrCarrito(false)
-        console.log(`Se han agregado ${cantidad} productos al carrito`)
         AgregarAlCarrito({...productos, cantidad:cantidad})
     }
 
