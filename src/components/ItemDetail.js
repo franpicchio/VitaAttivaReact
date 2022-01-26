@@ -13,8 +13,6 @@ const ItemDetail = ({productos}) => {
         setIrCarrito(false)
         AgregarAlCarrito({...productos, cantidad:cantidad})
     }
-
-    console.log(cartList)
     
     return (
         <article className="card w-25 m-3" key={productos.id}>
